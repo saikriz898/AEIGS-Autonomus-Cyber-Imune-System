@@ -1,0 +1,196 @@
+name: ${AEGIS_COMPOSE_PROJECT:-aegis-full-product}
+
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: docker/backend.Dockerfile
+  image: aegis-full-product-backend:local
+  env_file: .env
+  environment:
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-aegis}:${POSTGRES_PASSWORD:?Generate .env using scripts/configure.py}@postgres:5432/${POSTGRES_DB:-aegis}
+    REDIS_URL: redis://redis:6379/0
+    FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:-http://localhost:3000}
+    AI_PROVIDER: ${AI_PROVIDER:-none}
+    LOCAL_AI_BASE_URL: ${LOCAL_AI_BASE_URL:-}
+    LOCAL_AI_MODEL: ${LOCAL_AI_MODEL:-}
+    LOCAL_AI_TIMEOUT_SECONDS: ${LOCAL_AI_TIMEOUT_SECONDS:-90}
+    LOCAL_AI_MAX_TOKENS: ${LOCAL_AI_MAX_TOKENS:-450}
+    STORAGE_ROOT: /storage
+    DATASET_ROOTS: ${DATASET_ROOTS:-/datasets/unsw,/datasets/iot,/datasets/ton,/datasets/phishing,/datasets/local,/storage/uploads}
+  volumes:
+    - artifacts:/storage
+    - type: bind
+      source: ${LOCAL_DATA_PATH:-./data/raw}
+      target: /datasets/local
+      read_only: true
+    - type: bind
+      source: ${UNSW_DATA_PATH:-./data/raw/archive}
+      target: /datasets/unsw
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${IOT_DATA_PATH:-./data/raw/archive (1)}
+      target: /datasets/iot
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${TON_DATA_PATH:-./data/raw/archive (2)}
+      target: /datasets/ton
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ${PHISHING_DATA_PATH:-./data/raw/archive (3)}
+      target: /datasets/phishing
+      read_only: true
+      bind:
+        create_host_path: false
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-aegis}
+      POSTGRES_DB: ${POSTGRES_DB:-aegis}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Generate .env using scripts/configure.py}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+
+  redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+
+  api:
+    <<: *backend
+    ports:
+      - "127.0.0.1:${API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          CMD,
+          python,
+          -c,
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/ready', timeout=3)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 30s
+
+  worker:
+    <<: *backend
+    command:
+      [
+        sh,
+        -c,
+        "celery -A app.jobs.celery_app worker --loglevel=INFO --queues=celery,training --concurrency=$${WORKER_CONCURRENCY:-1} --prefetch-multiplier=1 --max-tasks-per-child=10 --max-memory-per-child=$${WORKER_MAX_MEMORY_KB:-1200000}",
+      ]
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          CMD-SHELL,
+          "celery -A app.jobs.celery_app inspect ping --destination celery@$$HOSTNAME --timeout 5 | grep -q pong",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  training-worker:
+    <<: *backend
+    profiles: [training]
+    command:
+      [
+        celery,
+        -A,
+        app.jobs.celery_app,
+        worker,
+        --loglevel=INFO,
+        --concurrency=1,
+        --prefetch-multiplier=1,
+        --queues=training,
+        --hostname=training@%h,
+        --max-tasks-per-child=1,
+      ]
+    depends_on:
+      api:
+        condition: service_healthy
+    mem_limit: 2g
+
+  frontend:
+    image: aegis-full-product-frontend:local
+    build:
+      context: frontend
+      dockerfile: ../docker/frontend.Dockerfile
+    environment:
+      API_INTERNAL_URL: http://api:8000
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-3000}:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          CMD,
+          node,
+          -e,
+          "fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  local-model:
+    profiles: [local-ai]
+    image: ${OLLAMA_IMAGE:-ollama/ollama:latest}
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_CONTEXT_LENGTH: "8192"
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_KEEP_ALIVE: 15m
+    volumes:
+      - local_model_data:/root/.ollama
+    mem_limit: 3g
+    cpus: 2
+    healthcheck:
+      test: [CMD, ollama, list]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  artifacts:
+  local_model_data:

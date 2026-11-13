@@ -1,0 +1,971 @@
+{
+    "generated_at":  "2026-11-12T19:21:47.682485+00:00",
+    "raw_files_modified":  false,
+    "datasets":  [
+                     {
+                         "name":  "UNSW-NB15_Dataset2",
+                         "local_path":  "archive/UNSW-NB15_Dataset2.csv",
+                         "container_path":  "/datasets/unsw/UNSW-NB15_Dataset2.csv",
+                         "format":  "csv",
+                         "size_bytes":  58497561,
+                         "sha256":  "4a37645cf871d21f638b5481d2c39b9349227637d5fd05e2cf61d81be5917681",
+                         "source":  null,
+                         "version":  null,
+                         "citation":  null,
+                         "license_status":  "unknown",
+                         "permission_status":  "unknown",
+                         "commercial_use":  "blocked_pending_review",
+                         "ingestion_status":  "discovered_not_registered",
+                         "row_count":  340693,
+                         "column_count":  40,
+                         "schema":  [
+                                        {
+                                            "name":  "dur",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "spkts",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dpkts",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sbytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dbytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "rate",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sttl",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dttl",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sload",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dload",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sloss",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dloss",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sinpkt",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dinpkt",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "sjit",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "djit",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "swin",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "stcpb",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dtcpb",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dwin",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "tcprtt",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "synack",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ackdat",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "smean",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dmean",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "trans_depth",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "response_body_len",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_srv_src",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_state_ttl",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_dst_ltm",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_src_dport_ltm",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_dst_sport_ltm",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_dst_src_ltm",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "is_ftp_login",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_ftp_cmd",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_flw_http_mthd",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_src_ltm",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ct_srv_dst",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "is_sm_ips_ports",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "attack",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        }
+                                    ],
+                         "label_candidates":  [
+                                                  "attack"
+                                              ],
+                         "class_distribution":  {
+                                                    "attack":  {
+                                                                   "Worm":  60855,
+                                                                   "Backdoor":  95494,
+                                                                   "Probe":  72789,
+                                                                   "DoS":  54246,
+                                                                   "Generic":  57309
+                                                               }
+                                                },
+                         "duplicate_rows":  198253,
+                         "malformed_rows":  0,
+                         "suspected_headerless":  false,
+                         "potential_leakage_columns":  [
+                                                           "attack"
+                                                       ],
+                         "quality_issues":  [
+                                                "198253 exact duplicate rows; remove before splitting."
+                                            ],
+                         "mapping_required":  true,
+                         "training_status":  "blocked: original source, citation, permission review, and explicit feature/label mapping required"
+                     },
+                     {
+                         "name":  "IoT_Intrusion",
+                         "local_path":  "archive (1)/IoT_Intrusion.csv",
+                         "container_path":  "/datasets/iot/IoT_Intrusion.csv",
+                         "format":  "csv",
+                         "size_bytes":  197510167,
+                         "sha256":  "8b87e17e99ce8ce7274c2c21c321a83e55e26e6f96a9b2c16875a953e0084ba7",
+                         "source":  null,
+                         "version":  null,
+                         "citation":  null,
+                         "license_status":  "unknown",
+                         "permission_status":  "unknown",
+                         "commercial_use":  "blocked_pending_review",
+                         "ingestion_status":  "discovered_not_registered",
+                         "row_count":  1048575,
+                         "column_count":  47,
+                         "schema":  [
+                                        {
+                                            "name":  "flow_duration",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Header_Length",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Protocol Type",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Duration",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Rate",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Srate",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Drate",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "fin_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "syn_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "rst_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "psh_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ack_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ece_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "cwr_flag_number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ack_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "syn_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "fin_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "urg_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "rst_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "HTTP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "HTTPS",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "DNS",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Telnet",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "SMTP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "SSH",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "IRC",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "TCP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "UDP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "DHCP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ARP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ICMP",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "IPv",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "LLC",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Tot sum",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Min",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Max",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "AVG",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Std",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Tot size",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "IAT",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Number",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Magnitue",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Radius",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Covariance",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Variance",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "Weight",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "label",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        }
+                                    ],
+                         "label_candidates":  [
+                                                  "label"
+                                              ],
+                         "class_distribution":  {
+                                                    "label":  {
+                                                                  "DDoS-RSTFINFlood":  90823,
+                                                                  "DoS-TCP_Flood":  59807,
+                                                                  "DDoS-ICMP_Flood":  161281,
+                                                                  "DoS-UDP_Flood":  74787,
+                                                                  "DoS-SYN_Flood":  45207,
+                                                                  "Mirai-greeth_flood":  22115,
+                                                                  "DDoS-SynonymousIP_Flood":  80680,
+                                                                  "Mirai-udpplain":  20166,
+                                                                  "DDoS-SYN_Flood":  91644,
+                                                                  "DDoS-PSHACK_Flood":  92395,
+                                                                  "DDoS-TCP_Flood":  101293,
+                                                                  "DDoS-UDP_Flood":  121205,
+                                                                  "BenignTraffic":  24476,
+                                                                  "MITM-ArpSpoofing":  7019,
+                                                                  "DDoS-ACK_Fragmentation":  6431,
+                                                                  "Mirai-greip_flood":  16952,
+                                                                  "DoS-HTTP_Flood":  1680,
+                                                                  "DDoS-ICMP_Fragmentation":  10223,
+                                                                  "Recon-PortScan":  1863,
+                                                                  "DNS_Spoofing":  4034,
+                                                                  "DDoS-UDP_Fragmentation":  6431,
+                                                                  "Recon-OSScan":  2225,
+                                                                  "XSS":  72,
+                                                                  "DDoS-HTTP_Flood":  626,
+                                                                  "Recon-HostDiscovery":  3007,
+                                                                  "CommandInjection":  105,
+                                                                  "VulnerabilityScan":  809,
+                                                                  "DDoS-SlowLoris":  493,
+                                                                  "Backdoor_Malware":  76,
+                                                                  "BrowserHijacking":  140,
+                                                                  "DictionaryBruteForce":  324,
+                                                                  "SqlInjection":  122,
+                                                                  "Recon-PingSweep":  41,
+                                                                  "Uploading_Attack":  23
+                                                              }
+                                                },
+                         "duplicate_rows":  65556,
+                         "malformed_rows":  0,
+                         "suspected_headerless":  false,
+                         "potential_leakage_columns":  [
+                                                           "label"
+                                                       ],
+                         "quality_issues":  [
+                                                "65556 exact duplicate rows; remove before splitting."
+                                            ],
+                         "mapping_required":  true,
+                         "training_status":  "blocked: original source, citation, permission review, and explicit feature/label mapping required"
+                     },
+                     {
+                         "name":  "train_test_network",
+                         "local_path":  "archive (2)/train_test_network.csv",
+                         "container_path":  "/datasets/ton/train_test_network.csv",
+                         "format":  "csv",
+                         "size_bytes":  29902775,
+                         "sha256":  "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974",
+                         "source":  null,
+                         "version":  null,
+                         "citation":  null,
+                         "license_status":  "unknown",
+                         "permission_status":  "unknown",
+                         "commercial_use":  "blocked_pending_review",
+                         "ingestion_status":  "discovered_not_registered",
+                         "row_count":  211043,
+                         "column_count":  44,
+                         "schema":  [
+                                        {
+                                            "name":  "src_ip",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "src_port",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dst_ip",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dst_port",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "proto",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "service",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "duration",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "src_bytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dst_bytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "conn_state",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "missed_bytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "src_pkts",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "src_ip_bytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dst_pkts",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dst_ip_bytes",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_query",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_qclass",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_qtype",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_rcode",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_AA",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_RD",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_RA",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "dns_rejected",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_version",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_cipher",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_resumed",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_established",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_subject",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "ssl_issuer",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_trans_depth",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_method",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_uri",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_version",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_request_body_len",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_response_body_len",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_status_code",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_user_agent",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_orig_mime_types",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "http_resp_mime_types",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "weird_name",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "weird_addl",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "weird_notice",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "label",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "type",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        }
+                                    ],
+                         "label_candidates":  [
+                                                  "label",
+                                                  "type"
+                                              ],
+                         "class_distribution":  {
+                                                    "label":  {
+                                                                  "1":  161043,
+                                                                  "0":  50000
+                                                              },
+                                                    "type":  {
+                                                                 "backdoor":  20000,
+                                                                 "ddos":  20000,
+                                                                 "dos":  20000,
+                                                                 "injection":  20000,
+                                                                 "mitm":  1043,
+                                                                 "normal":  50000,
+                                                                 "password":  20000,
+                                                                 "ransomware":  20000,
+                                                                 "scanning":  20000,
+                                                                 "xss":  20000
+                                                             }
+                                                },
+                         "duplicate_rows":  20569,
+                         "malformed_rows":  0,
+                         "suspected_headerless":  false,
+                         "potential_leakage_columns":  [
+                                                           "src_ip",
+                                                           "dst_ip",
+                                                           "src_ip_bytes",
+                                                           "dst_ip_bytes",
+                                                           "dns_qclass",
+                                                           "label"
+                                                       ],
+                         "quality_issues":  [
+                                                "20569 exact duplicate rows; remove before splitting."
+                                            ],
+                         "mapping_required":  true,
+                         "training_status":  "blocked: original source, citation, permission review, and explicit feature/label mapping required"
+                     },
+                     {
+                         "name":  "phishing_features",
+                         "local_path":  "archive (3)/phishing_features.csv",
+                         "container_path":  "/datasets/phishing/phishing_features.csv",
+                         "format":  "csv",
+                         "size_bytes":  16118654,
+                         "sha256":  "1de48e23501c544b6d345fcdeca544c42f71ab10d3061e174b1d97feafc07db8",
+                         "source":  null,
+                         "version":  null,
+                         "citation":  null,
+                         "license_status":  "unknown",
+                         "permission_status":  "unknown",
+                         "commercial_use":  "blocked_pending_review",
+                         "ingestion_status":  "discovered_not_registered",
+                         "row_count":  160064,
+                         "column_count":  13,
+                         "schema":  [
+                                        {
+                                            "name":  "url",
+                                            "dtype":  "string",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "label",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "url_length",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "num_dots",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "has_https",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "has_ip",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "num_subdirs",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "num_params",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "suspicious_words",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "tld",
+                                            "dtype":  "string",
+                                            "missing_count":  821
+                                        },
+                                        {
+                                            "name":  "special_char_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "digits_count",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        },
+                                        {
+                                            "name":  "entropy",
+                                            "dtype":  "numeric",
+                                            "missing_count":  0
+                                        }
+                                    ],
+                         "label_candidates":  [
+                                                  "label"
+                                              ],
+                         "class_distribution":  {
+                                                    "label":  {
+                                                                  "1":  159244,
+                                                                  "0":  820
+                                                              }
+                                                },
+                         "duplicate_rows":  0,
+                         "malformed_rows":  0,
+                         "suspected_headerless":  false,
+                         "potential_leakage_columns":  [
+                                                           "label"
+                                                       ],
+                         "quality_issues":  [
+                                                "Missing values require training-only preprocessing."
+                                            ],
+                         "mapping_required":  true,
+                         "training_status":  "blocked: original source, citation, permission review, and explicit feature/label mapping required"
+                     }
+                 ],
+    "file_aliases":  [
+                         {
+                             "local_path":  "full-product/data/raw/archive/UNSW-NB15_Dataset2.csv",
+                             "container_path":  "/datasets/local/archive/UNSW-NB15_Dataset2.csv",
+                             "canonical_container_path":  "/datasets/unsw/UNSW-NB15_Dataset2.csv",
+                             "sha256":  "4a37645cf871d21f638b5481d2c39b9349227637d5fd05e2cf61d81be5917681",
+                             "size_bytes":  58497561,
+                             "verified_at":  "2026-11-13T01:23:11.2049694Z"
+                         },
+                         {
+                             "local_path":  "full-product/data/raw/archive (1)/IoT_Intrusion.csv",
+                             "container_path":  "/datasets/local/archive (1)/IoT_Intrusion.csv",
+                             "canonical_container_path":  "/datasets/iot/IoT_Intrusion.csv",
+                             "sha256":  "8b87e17e99ce8ce7274c2c21c321a83e55e26e6f96a9b2c16875a953e0084ba7",
+                             "size_bytes":  197510167,
+                             "verified_at":  "2026-11-13T01:23:11.4894628Z"
+                         },
+                         {
+                             "local_path":  "full-product/data/raw/archive (2)/train_test_network.csv",
+                             "container_path":  "/datasets/local/archive (2)/train_test_network.csv",
+                             "canonical_container_path":  "/datasets/ton/train_test_network.csv",
+                             "sha256":  "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974",
+                             "size_bytes":  29902775,
+                             "verified_at":  "2026-11-13T01:23:11.5269776Z"
+                         },
+                         {
+                             "local_path":  "full-product/data/raw/archive (3)/phishing_features.csv",
+                             "container_path":  "/datasets/local/archive (3)/phishing_features.csv",
+                             "canonical_container_path":  "/datasets/phishing/phishing_features.csv",
+                             "sha256":  "1de48e23501c544b6d345fcdeca544c42f71ab10d3061e174b1d97feafc07db8",
+                             "size_bytes":  16118654,
+                             "verified_at":  "2026-11-13T01:23:11.5499880Z"
+                         }
+                     ],
+    "unique_dataset_count":  4,
+    "discovered_file_locations":  8
+}

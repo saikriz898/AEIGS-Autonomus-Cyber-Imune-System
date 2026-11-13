@@ -1,0 +1,51 @@
+# Dependencies and builds
+node_modules/
+.next/
+dist/
+build/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+test-results/
+playwright-report/
+.e2e/
+coverage/
+
+# Secrets and local infrastructure state
+.env
+.env.*
+!.env.example
+*.local
+*.log
+*.db
+*.sqlite*
+backups/
+storage/
+
+# Read-only datasets and generated training artifacts must never be committed
+data/raw/
+data/uploads/
+datasets/
+uploads/
+artifacts/
+models/
+*.csv
+*.parquet
+*.arff
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

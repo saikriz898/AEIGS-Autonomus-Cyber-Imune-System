@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: npm
+    directory: /prototype
+    schedule:
+      interval: weekly
+  - package-ecosystem: npm
+    directory: /full-product/frontend
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: /full-product/backend
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /full-product/docker
+    schedule:
+      interval: weekly

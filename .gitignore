@@ -1,0 +1,41 @@
+# Dependencies and generated builds (including prototype/)
+node_modules/
+dist/
+build/
+coverage/
+
+# Browser test outputs and local tooling caches
+test-results/
+playwright-report/
+.vite/
+*.tsbuildinfo
+
+# Local configuration, secrets, and logs
+.env
+.env.*
+!.env.example
+*.local
+*.log
+npm-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python tooling and local application state
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.next/
+.e2e/
+backups/
+*.dump
+.vscode/
+# Optional original dataset locations outside full-product/
+/archive/
+/archive (1)/
+/archive (2)/
+/archive (3)/
