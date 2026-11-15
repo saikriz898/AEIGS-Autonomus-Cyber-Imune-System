@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import tempfile
 from pathlib import Path
 
 
@@ -12,9 +13,20 @@ class DataError(ValueError):
 
 
 def storage_root() -> Path:
-    root = Path(os.getenv("STORAGE_ROOT", "/storage")).resolve()
-    root.mkdir(parents=True, exist_ok=True)
-    return root
+    configured = os.getenv("STORAGE_ROOT")
+    if configured:
+        root = Path(configured).resolve()
+        root.mkdir(parents=True, exist_ok=True)
+        return root
+
+    root = Path("/storage").resolve()
+    try:
+        root.mkdir(parents=True, exist_ok=True)
+        return root
+    except (PermissionError, OSError):
+        fallback = Path(os.getenv("AEGIS_STORAGE_FALLBACK", Path(tempfile.gettempdir()) / "aegis-storage")).resolve()
+        fallback.mkdir(parents=True, exist_ok=True)
+        return fallback
 
 
 def dataset_roots() -> list[Path]:
